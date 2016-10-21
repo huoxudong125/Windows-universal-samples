@@ -146,8 +146,8 @@ namespace SDKTemplate
                 // RequestAccessAsync must be called on the UI thread.
                 BackgroundAccessStatus accessStatus = await BackgroundExecutionManager.RequestAccessAsync();
 
-                if ((BackgroundAccessStatus.AllowedWithAlwaysOnRealTimeConnectivity == accessStatus) ||
-                    (BackgroundAccessStatus.AllowedMayUseActiveRealTimeConnectivity == accessStatus))
+                if ((BackgroundAccessStatus.AlwaysAllowed == accessStatus) ||
+                    (BackgroundAccessStatus.AllowedSubjectToSystemPolicy == accessStatus))
                 {
                     if (await StartSensorBackgroundTaskAsync(Accelerometer.DeviceId))
                     {
@@ -285,11 +285,11 @@ namespace SDKTemplate
             if (ApplicationData.Current.LocalSettings.Values.ContainsKey("SampleCount"))
             {
                 ulong sampleCount = (ulong)ApplicationData.Current.LocalSettings.Values["SampleCount"];
-                ScenarioOutputSampleCount.Text = sampleCount.ToString(System.Globalization.CultureInfo.CurrentCulture);
+                ScenarioOutput_SampleCount.Text = sampleCount.ToString(System.Globalization.CultureInfo.CurrentCulture);
             }
             else
             {
-                ScenarioOutputSampleCount.Text = "No data";
+                ScenarioOutput_SampleCount.Text = "No data";
             }
         }
 

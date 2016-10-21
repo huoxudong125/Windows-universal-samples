@@ -1,6 +1,8 @@
 ﻿<!---
   category: NetworkingAndWebServices 
+  samplefwlink: http://go.microsoft.com/fwlink/p/?LinkId=620551
 --->
+
 # HttpClient sample
 
 This sample shows you how to upload and download various types of content with an HTTP server using the [**HttpClient**](http://msdn.microsoft.com/library/windows/apps/dn298639) and related classes in [**Windows.Web.Http**](http://msdn.microsoft.com/library/windows/apps/dn279692) namespace.
@@ -25,12 +27,13 @@ Scenario 7: Use HTTP POST command to upload a stream - use progress indicator an
 
 Scenario 8: Use HTTP POST command to upload custom content
 
-Scenario 9-11: Query for cookies, set new cookies and delete existing cookies
-
-Scenario 12: Use a filter to adapt download behavior based on whether the device is on a metered network connection or not
+Scenario 9-12: Query for cookies, set new cookies, delete existing cookies, and disable cookies
 
 Scenario 13: Use a filter to retry HTTP requests if required
 
+Scenario 14: Use a filter to adapt download behavior based on whether the device is on a metered network connection or not
+
+Scenario 15: Validate the server certificate
 
 **Note**  This sample by default requires network access using the loopback interface.
 
@@ -57,13 +60,11 @@ For more information on network capabilities, see [How to set network capabiliti
 
 [Connecting to network services (XAML)](http://msdn.microsoft.com/library/windows/apps/hh452976)
 
-[\>Connecting with WebSockets (XAML)](http://msdn.microsoft.com/library/windows/apps/hh994396)
+[Connecting with WebSockets (XAML)](http://msdn.microsoft.com/library/windows/apps/hh994396)
 
-[How to connect to an HTTP server using Windows.Web.Http Windows.Web.Http.HttpClient (XAML)](http://msdn.microsoft.com/library/windows/apps/dn440594)
+[HttpClient](https://msdn.microsoft.com/library/windows/apps/mt187345)
 
-[How to set network capabilities (XAML)](http://msdn.microsoft.com/library/windows/apps/jj835817)
-
-[Staying connected in the background (XAML)](http://msdn.microsoft.com/library/windows/apps/jj662741)
+[Networking basics](https://msdn.microsoft.com/library/windows/apps/mt280233)
 
 [Troubleshooting and debugging network connections](http://msdn.microsoft.com/library/windows/apps/hh770534)
 
@@ -107,18 +108,18 @@ For more information on network capabilities, see [How to set network capabiliti
 
 ## System requirements
 
-**Client:** Windows 10
+**Client:** Windows 10 version 1604 preview
 
-**Server:** Windows Server 2016 Insider Preview
+**Server:** Windows Server 2016 Technical Preview
 
-**Phone:** Windows 10
+**Phone:** Windows 10 version 1604 preview
 
 ## Build the sample
 
-1. Start Microsoft Visual Studio 2015 and select **File** \> **Open** \> **Project/Solution**.
-2. Go to the subdirectory for the desired language.
-3. Double-click the Visual Studio 2015 Solution (.sln) file. 
-4. Press Ctrl+Shift+B, or select **Build** \> **Build Solution**. 
+1. If you download the samples ZIP, be sure to unzip the entire archive, not just the folder with the sample you want to build. 
+2. Start Microsoft Visual Studio 2015 and select **File** \> **Open** \> **Project/Solution**.
+3. Starting in the folder where you unzipped the samples, go to the Samples subfolder, then the subfolder for this specific sample, then the subfolder for your preferred language (C++, C#, or JavaScript). Double-click the Visual Studio 2015 Solution (.sln) file.
+4. Press Ctrl+Shift+B, or select **Build** \> **Build Solution**.
 
 ## Run the sample
 

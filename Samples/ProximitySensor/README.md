@@ -1,16 +1,19 @@
 ﻿<!---
   category: DevicesSensorsAndPower
+  samplefwlink: http://go.microsoft.com/fwlink/p/?LinkId=620588
 --->
 
-# Proximity Sensor sample
+# Proximity sensor sample
 
 This sample demonstrates the use of the Windows.Devices.Sensors.ProximitySensor API.
 
-This sample allows the user to view the proximity detection reading as a boolean value. You can choose one of three scenarios:
+This sample allows the user to view the proximity detection reading as a boolean value.
+It includes the following scenarios:
 
 -   Proximity sensor data events
 -   Polling proximity sensor readings
 -   Proximity Monitoring to Turn the Display On or Off
+-   Background Proximity Sensor
 
 **Proximity Sensor Data Events**
 
@@ -24,6 +27,12 @@ When you choose the Get Data button for the **Polling** option, the app will ret
 
 When you choose the Enable button for the **Display On/Off** option, the app will request the system to monitor the proximity sensor detection state to automatically turn the display on or off.
 
+**Background Proximity Sensor**
+
+This demonstrates using a Proximity sensor's state as a background trigger.
+When you click the 'Register Task' button, an available proximity sensor will be used to register for notifications in the change of proximity.
+When a change in the proximity is detected by the sensor, the registered background task gets fired. Proximity Sensor readings are then retrieved from the trigger to update the scenario UI.
+
 ## System requirements
 
 **Client:** Windows 10
@@ -34,9 +43,10 @@ When you choose the Enable button for the **Display On/Off** option, the app wil
 
 ## Build the sample
 
-1. Start Microsoft Visual Studio 2015 and select **File** \> **Open** \> **Project/Solution**.
-2. Go to the directory to which you unzipped the sample. Then go to the subdirectory containing the sample in the language you desire - either C++, C#, or JavaScript. Double-click the Visual Studio 2015 Solution (.sln) file. 
-3. Press Ctrl+Shift+B, or select **Build** \> **Build Solution**. 
+1. If you download the samples ZIP, be sure to unzip the entire archive, not just the folder with the sample you want to build. 
+2. Start Microsoft Visual Studio 2015 and select **File** \> **Open** \> **Project/Solution**.
+3. Starting in the folder where you unzipped the samples, go to the Samples subfolder, then the subfolder for this specific sample, then the subfolder for your preferred language (C++, C#, or JavaScript). Double-click the Visual Studio 2015 Solution (.sln) file.
+4. Press Ctrl+Shift+B, or select **Build** \> **Build Solution**.
 
 ## Run the sample
 

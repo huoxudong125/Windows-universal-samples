@@ -19,9 +19,7 @@ using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
 
-using SDKTemplate;
-
-namespace ActivitySensorCS
+namespace SDKTemplate
 {
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
@@ -77,12 +75,12 @@ namespace ActivitySensorCS
                 // Determine if an activity sensor is present
                 // This can also be done using Windows::Devices::Enumeration::DeviceInformation::FindAllAsync
                 var activitySensor = await ActivitySensor.GetDefaultAsync();
-                if (activitySensor != null)
+                if (true||activitySensor != null)
                 {
                     var status = await BackgroundExecutionManager.RequestAccessAsync();
 
-                    if ((BackgroundAccessStatus.AllowedWithAlwaysOnRealTimeConnectivity == status) ||
-                        (BackgroundAccessStatus.AllowedMayUseActiveRealTimeConnectivity == status))
+                    if ((BackgroundAccessStatus.AlwaysAllowed == status) ||
+                        (BackgroundAccessStatus.AllowedSubjectToSystemPolicy == status))
                     {
                         RegisterBackgroundTask();
                     }

@@ -13,7 +13,6 @@
 #include "SampleConfiguration.h"
 
 using namespace SDKTemplate;
-using namespace BackgroundTask;
 
 String^ BackgroundTaskSample::SampleBackgroundTaskProgress = "";
 bool BackgroundTaskSample::SampleBackgroundTaskRegistered = false;
@@ -35,11 +34,11 @@ Array<Scenario>^ MainPage::scenariosInner = ref new Array<Scenario>
 {
     // The format here is the following:
     //     { "Description for the sample", "Fully quaified name for the class that implements the scenario" }
-    { "Background task", "BackgroundTask.SampleBackgroundTask" }, 
-    { "Background task with a condition", "BackgroundTask.SampleBackgroundTaskWithCondition" },
-    { "Servicing complete task", "BackgroundTask.ServicingCompleteTask" },
-    { "Background task with time trigger", "BackgroundTask.TimeTriggeredTask" },
-    { "Background task with application trigger", "BackgroundTask.ApplicationTriggerTask" }
+    { "Background task", "SDKTemplate.SampleBackgroundTask" },
+    { "Background task with a condition", "SDKTemplate.SampleBackgroundTaskWithCondition" },
+    { "Servicing complete task", "SDKTemplate.ServicingCompleteTask" },
+    { "Background task with time trigger", "SDKTemplate.TimeTriggeredTask" },
+    { "Background task with application trigger", "SDKTemplate.ApplicationTriggerTask" }
 };
 
 String^ BackgroundTaskSample::GetBackgroundTaskStatus(String^ name)
@@ -103,7 +102,7 @@ BackgroundTaskRegistration^ BackgroundTaskSample::RegisterBackgroundTask(String^
 
     auto task = builder->Register();
 
-    UpdateBackgroundTaskStatus(name, true);
+    UpdateBackgroundTaskRegistrationStatus(name, true);
 
     //
     // Remove previous completion status from local settings.
@@ -143,17 +142,17 @@ void BackgroundTaskSample::UnregisterBackgroundTasks(String^ name)
     {
         auto cur = iter->Current->Value;
 
-        if(cur->Name == name)
+        if (cur->Name == name)
         {
             cur->Unregister(true);
-            UpdateBackgroundTaskStatus(name, false);
+            UpdateBackgroundTaskRegistrationStatus(name, false);
         }
 
         hascur = iter->MoveNext();
     }
 }
 
-void BackgroundTaskSample::UpdateBackgroundTaskStatus(String^ name, bool registered)
+void BackgroundTaskSample::UpdateBackgroundTaskRegistrationStatus(String^ name, bool registered)
 {
     if (name == SampleBackgroundTaskName)
     {
